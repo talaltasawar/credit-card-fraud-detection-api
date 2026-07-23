@@ -1,0 +1,15 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment (Bohat bada)
+venv/
+myenv/
+env/
+
+# Model files (Badi .pkl files)
+*.pkl
+
+# IDE settings
+.vscode/
+.idea/

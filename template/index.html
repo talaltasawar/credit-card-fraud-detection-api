@@ -1,0 +1,271 @@
+# ---------- 🖤 DARK & PYAARA HOMEPAGE (GLASS + DEEP DARK) ----------
+@app.get("/", response_class=HTMLResponse)
+async def read_root():
+    return """
+    <html>
+        <head>
+            <title>💳 Fraud Detection API</title>
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+            <style>
+                * { margin: 0; padding: 0; box-sizing: border-box; }
+
+                body {
+                    font-family: 'Inter', sans-serif;
+                    min-height: 100vh;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: #0a0a0f;
+                    background-image: 
+                        radial-gradient(ellipse at 10% 20%, rgba(120, 80, 255, 0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at 90% 80%, rgba(255, 100, 150, 0.1) 0%, transparent 50%),
+                        radial-gradient(ellipse at 50% 50%, rgba(0, 200, 255, 0.05) 0%, transparent 70%);
+                    overflow: hidden;
+                    position: relative;
+                }
+
+                /* ✨ Floating Glow Orbs */
+                .orb {
+                    position: absolute;
+                    border-radius: 50%;
+                    filter: blur(80px);
+                    pointer-events: none;
+                }
+                .orb-1 {
+                    width: 400px; height: 400px;
+                    background: rgba(120, 80, 255, 0.3);
+                    top: -15%;
+                    left: -10%;
+                    animation: floatOrb 12s infinite alternate ease-in-out;
+                }
+                .orb-2 {
+                    width: 350px; height: 350px;
+                    background: rgba(255, 100, 150, 0.25);
+                    bottom: -10%;
+                    right: -5%;
+                    animation: floatOrb 14s infinite alternate-reverse ease-in-out;
+                }
+                .orb-3 {
+                    width: 200px; height: 200px;
+                    background: rgba(0, 200, 255, 0.15);
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    animation: floatOrb 10s infinite alternate ease-in-out;
+                }
+
+                @keyframes floatOrb {
+                    0% { transform: translate(0px, 0px) scale(1); }
+                    100% { transform: translate(60px, -40px) scale(1.3); }
+                }
+
+                /* 🌟 Glass Card - Premium Dark Version */
+                .glass-card {
+                    position: relative;
+                    z-index: 10;
+                    background: rgba(255, 255, 255, 0.04);
+                    backdrop-filter: blur(24px) saturate(1.4);
+                    -webkit-backdrop-filter: blur(24px) saturate(1.4);
+                    border: 1px solid rgba(255, 255, 255, 0.08);
+                    border-radius: 32px;
+                    padding: 60px 70px;
+                    max-width: 680px;
+                    width: 92%;
+                    text-align: center;
+                    box-shadow: 
+                        0 30px 80px rgba(0, 0, 0, 0.8),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+                    animation: fadeUp 0.8s ease-out;
+                }
+
+                @keyframes fadeUp {
+                    from { opacity: 0; transform: translateY(30px) scale(0.96); }
+                    to { opacity: 1; transform: translateY(0) scale(1); }
+                }
+
+                /* 🏷️ Badge */
+                .badge {
+                    display: inline-block;
+                    background: rgba(120, 80, 255, 0.2);
+                    border: 1px solid rgba(120, 80, 255, 0.25);
+                    padding: 6px 20px;
+                    border-radius: 50px;
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                    color: #a78bfa;
+                    letter-spacing: 0.5px;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                }
+
+                /* 📱 Logo */
+                .logo {
+                    font-size: 56px;
+                    display: block;
+                    margin-bottom: 8px;
+                    animation: gentlePulse 3s infinite ease-in-out;
+                }
+                @keyframes gentlePulse {
+                    0%, 100% { transform: scale(1); }
+                    50% { transform: scale(1.06); }
+                }
+
+                /* 🎯 Headings */
+                h1 {
+                    font-size: 2.8rem;
+                    font-weight: 900;
+                    color: #ffffff;
+                    margin-bottom: 6px;
+                    letter-spacing: -0.5px;
+                }
+                h1 .highlight {
+                    background: linear-gradient(135deg, #a78bfa, #7c3aed, #ec4899);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+
+                .subtitle {
+                    color: rgba(255, 255, 255, 0.5);
+                    font-size: 1.05rem;
+                    font-weight: 300;
+                    margin-bottom: 35px;
+                    letter-spacing: 0.3px;
+                }
+
+                /* 🔘 Buttons - Soft & Premium */
+                .btn-group {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 16px;
+                    justify-content: center;
+                    margin-bottom: 20px;
+                }
+
+                .btn {
+                    padding: 14px 36px;
+                    border-radius: 60px;
+                    text-decoration: none;
+                    font-weight: 600;
+                    font-size: 0.95rem;
+                    transition: all 0.35s ease;
+                    border: none;
+                    cursor: pointer;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 10px;
+                    background: rgba(255, 255, 255, 0.06);
+                    color: #fff;
+                    border: 1px solid rgba(255, 255, 255, 0.08);
+                }
+
+                .btn-primary {
+                    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+                    border: none;
+                    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.3);
+                    color: #fff;
+                }
+                .btn-primary:hover {
+                    transform: translateY(-3px) scale(1.02);
+                    box-shadow: 0 12px 45px rgba(124, 58, 237, 0.5);
+                    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+                }
+
+                .btn-success {
+                    background: rgba(16, 185, 129, 0.15);
+                    border: 1px solid rgba(16, 185, 129, 0.25);
+                    color: #34d399;
+                }
+                .btn-success:hover {
+                    transform: translateY(-3px) scale(1.02);
+                    background: rgba(16, 185, 129, 0.25);
+                    border-color: rgba(16, 185, 129, 0.4);
+                    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.15);
+                }
+
+                .btn-outline {
+                    background: transparent;
+                    border: 1px solid rgba(255, 255, 255, 0.12);
+                    color: rgba(255, 255, 255, 0.6);
+                }
+                .btn-outline:hover {
+                    transform: translateY(-3px);
+                    background: rgba(255, 255, 255, 0.04);
+                    border-color: rgba(255, 255, 255, 0.25);
+                    color: #fff;
+                }
+
+                /* 📊 Stats Row */
+                .stats {
+                    display: flex;
+                    justify-content: center;
+                    gap: 40px;
+                    margin-top: 30px;
+                    padding-top: 25px;
+                    border-top: 1px solid rgba(255, 255, 255, 0.05);
+                }
+                .stat-item {
+                    text-align: center;
+                }
+                .stat-number {
+                    font-size: 1.3rem;
+                    font-weight: 700;
+                    color: #fff;
+                    display: block;
+                }
+                .stat-label {
+                    font-size: 0.7rem;
+                    color: rgba(255, 255, 255, 0.3);
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    margin-top: 2px;
+                }
+
+                /* 📱 Responsive */
+                @media (max-width: 600px) {
+                    .glass-card { padding: 40px 25px; }
+                    h1 { font-size: 2rem; }
+                    .logo { font-size: 42px; }
+                    .btn { padding: 12px 24px; font-size: 0.85rem; }
+                    .stats { gap: 20px; }
+                    .stat-number { font-size: 1rem; }
+                }
+            </style>
+        </head>
+        <body>
+
+            <!-- Floating Orbs -->
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+
+            <!-- Main Card -->
+            <div class="glass-card">
+                <div class="badge">⚡ Real-time AI</div>
+                <span class="logo">💳</span>
+                <h1>Fraud <span class="highlight">Detection</span></h1>
+                <p class="subtitle">🔍 Instant fraud scoring for every transaction</p>
+
+                <div class="btn-group">
+                    <a href="/docs" class="btn btn-primary">📖 Swagger UI</a>
+                    <a href="/health" class="btn btn-success">❤️ Health</a>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">0.85</span>
+                        <span class="stat-label">Threshold</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">92%</span>
+                        <span class="stat-label">Recall</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">🚀</span>
+                        <span class="stat-label">Real-time</span>
+                    </div>
+                </div>
+            </div>
+
+        </body>
+    </html>
+    """
